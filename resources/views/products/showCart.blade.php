@@ -29,7 +29,7 @@
                                             <tr class="text-center">
                                                 <td scope="row" class="border-0 text-left">
                                                     <div class="p-2 ">
-                                                        <img src="/asset/storage/{{$item['item']->image}}"
+                                                        <img src="{{asset('storage/'.$item['item']->image)}}"
                                                              alt="" width="70" class="img-fluid rounded shadow-sm">
                                                         <div class="ml-3 d-inline-block align-middle">
                                                             <h5 class="mb-0">

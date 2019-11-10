@@ -6,6 +6,7 @@ use App\Http\Repositories\eloquent\ProductEloquent;
 use App\Http\Repositories\ProductRepositoriesInterface;
 use App\Http\Services\implement\ProductServices;
 use App\Http\Services\ProductServicesInterface;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
