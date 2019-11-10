@@ -33,7 +33,7 @@
         position: fixed;
         left: 0;
         bottom: 0;
-        height: 4%;
+        height: 5%;
         width: 100%;
         background: #007b5e !important;
     }
