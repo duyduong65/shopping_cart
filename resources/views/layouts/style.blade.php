@@ -26,7 +26,7 @@
     }
 
     section {
-        padding: 8px;
+        padding: 0px;
     }
 
     #footer {

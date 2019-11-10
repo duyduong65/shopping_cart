@@ -62,6 +62,12 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                <a href="">
+                                    <img src="https://img.icons8.com/plasticine/30/000000/google-logo.png">
+                                </a>
+                                <a href="">
+                                    <img src="https://img.icons8.com/office/25/000000/facebook-new.png">
+                                </a>
                             </div>
                         </div>
                     </form>
