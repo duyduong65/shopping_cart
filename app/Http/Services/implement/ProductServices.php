@@ -39,16 +39,38 @@ class ProductServices implements ProductServicesInterface
         return $this->productRepo->save($product);
     }
 
-    function search($request)
+    function search($search)
     {
-        $search = $request->get('search');
-        return $this->productRepo->get($search);
+        return $this->productRepo->search($search);
     }
 
     function destroy($id)
     {
         $product = $this->productRepo->findById($id);
-        File::delete(storage_path('/app/public/'.$product->image));
+        File::delete(storage_path('/app/public/' . $product->image));
         return $this->productRepo->delete($product);
+    }
+
+    function edit($id)
+    {
+        return $this->productRepo->findById($id);
+    }
+
+    function update($request, $id)
+    {
+        $product = $this->productRepo->findById($id);
+
+        $product->name = $request->productName;
+        $product->price = $request->productPrice;
+        $product->origin = $request->productOrigin;
+        $product->description = $request->productDescription;
+
+        if ($request->hasFile('productImage')) {
+            File::delete(storage_path('/app/public/' . $product->image));
+            $image = $request->file('productImage');
+            $path = $image->store('upload', 'public');
+            $product->image = $path;
+        }
+        $this->productRepo->save($product);
     }
 }

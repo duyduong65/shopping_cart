@@ -21,10 +21,10 @@ class ProductEloquent implements ProductRepositoriesInterface
         return $obj->all();
     }
 
-    function get($search)
+    function search($string)
     {
         $product = new Product();
-        return $product->where('name', 'like', "%$search%")->get();
+        return $product->where('name', 'like', "%$string%")->get();
     }
 
     function findById($id)

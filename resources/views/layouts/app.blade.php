@@ -28,7 +28,6 @@ $res = $client->get('http://api.openweathermap.org/data/2.5/weather?q=Hanoi&appi
 $data = $res->getBody();
 $data = json_decode($data);
 ?>
-
 <div class="hero-image">
 
     <div class="content">
@@ -97,8 +96,13 @@ $data = json_decode($data);
                             <div>
                                 <form action="{{route('products.search')}}" method="get">
                                     @csrf
-                                    <input type="text" class="form-control" name="search">
-                                    <button type="submit"class="btn btn-light">
+                                    <input type="text" class="form-control" name="search"
+
+{{--                                        @if($_REQUEST['REQUEST_METHOD' == 'GET'])--}}
+{{--                                            VALUE="{{$search}}"--}}
+{{--                                        @endif--}}
+                                    >
+                                    <button type="submit" class="btn btn-light">
                                         <img src="https://img.icons8.com/pastel-glyph/30/000000/search--v2.png">
                                     </button>
                                 </form>

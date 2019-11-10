@@ -4,6 +4,7 @@
         height: 80%;
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
+        position: relative;
     }
 
     .hero-image {
@@ -29,6 +30,11 @@
     }
 
     #footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 4%;
+        width: 100%;
         background: #007b5e !important;
     }
     .content {

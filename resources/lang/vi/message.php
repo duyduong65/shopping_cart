@@ -5,6 +5,7 @@ return [
     "Del" => "Xóa",
     "Edit" => "Sửa",
     "Name" => "Tên",
+    "price" => "Giá thành",
     "Origin" => "Nguồn gốc",
     "Description" => "Mô tả",
     "ChooseImage" => "chọn Ảnh",
@@ -17,5 +18,7 @@ return [
     "Product" => "SẢN PHẨM",
     "Price" => "GIÁ THÀNH",
     "Quantity" => "SỐ LƯỢNG",
+    "Update" => "Cập Nhật",
+    "NoData" => "Không có dữ liệu",
 
 ];

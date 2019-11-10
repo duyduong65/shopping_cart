@@ -11,33 +11,29 @@
 |
 */
 
-
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-
-
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
-
-
 
 Route::middleware('locale')->group(function () {
 
     Route::post('language', 'LanguageController@setLang')->name('setLang');
     Route::get('/home', 'ProductController@index')->name('home');
 
-    Route::middleware('auth')->group(function (){
+    Route::middleware('auth')->group(function () {
         Route::prefix('/product')->group(function () {
+            Route::get('search', 'ProductController@search')->name('products.search');
             Route::get('create', 'ProductController@create')->name('products.create');
             Route::post('store', 'ProductController@store')->name('products.store');
             Route::get('{id}/delete', 'ProductController@destroy')->name('products.destroy');
-            Route::get('search','ProductController@search')->name('products.search');
+            Route::get('{id}/edit', 'ProductController@edit')->name('products.edit');
+            Route::post('{id}/update', 'ProductController@update')->name('products.update');
         });
     });
-
 
     Route::prefix('/cart')->group(function () {
         Route::get('addToCart/{id}', 'CartController@addToCart')->name('cart.addToCart');

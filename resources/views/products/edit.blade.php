@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="col-md d-flex justify-content-center">
-            <form action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('products.update',$product->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     @lang('message.Name')
@@ -11,7 +11,7 @@
                     @if($errors->has('productName'))
                         border-danger
                     @endif
-                    form-control" name="productName" placeholder="@lang('message.EnterNameProduct')">
+                        form-control" name="productName" value="{{$product->name}}" placeholder="@lang('message.EnterNameProduct')">
                     @if($errors->has('productName'))
                         <p class="text-danger">
                             <img src="https://img.icons8.com/dusk/16/000000/warning-shield.png">
@@ -25,7 +25,7 @@
                     @if($errors->has('productProduct'))
                         border-danger
                     @endif
-                    form-control" name="productPrice" placeholder="@lang('message.EnterPriceProduct')">
+                        form-control" name="productPrice" placeholder="@lang('message.EnterPriceProduct')"  value="{{$product->price}}">
                     @if($errors->has('productPrice'))
                         <p class="text-danger">
                             <img src="https://img.icons8.com/dusk/16/000000/warning-shield.png">
@@ -39,7 +39,7 @@
                     @if($errors->has('productOrigin'))
                         border-danger
                     @endif
-                    form-control" name="productOrigin" placeholder="@lang('message.EnterOriginProduct')">
+                        form-control" name="productOrigin" placeholder="@lang('message.EnterOriginProduct')"  value="{{$product->origin}}">
                     @if($errors->has('productOrigin'))
 
                         <p class="text-danger">
@@ -54,7 +54,7 @@
                     @if($errors->has('productDescription'))
                         border-danger
                     @endif
-                    form-control" name="productDescription" placeholder="@lang('message.EnterDescriptionProduct')">
+                        form-control" name="productDescription" placeholder="@lang('message.EnterDescriptionProduct')"  value="{{$product->description}}">
                     @if($errors->has('productDescription'))
                         <p class="text-danger">
                             <img src="https://img.icons8.com/dusk/16/000000/warning-shield.png">
@@ -73,7 +73,7 @@
                     @endif
                 </div>
                 <div style="margin-top: 14px">
-                    <button type="submit" class="btn btn-primary">@lang('message.Add')</button>
+                    <button type="submit" class="btn btn-primary">@lang('message.Update')</button>
                 </div>
             </form>
         </div>

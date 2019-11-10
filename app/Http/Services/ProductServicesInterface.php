@@ -10,4 +10,6 @@ interface ProductServicesInterface extends BaseServicesInterface
     function addProduct($request);
     function search($request);
     function destroy($id);
+    function edit($id);
+    function update($request,$id);
 }
