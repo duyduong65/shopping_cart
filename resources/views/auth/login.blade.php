@@ -65,7 +65,7 @@
                                 <a href="">
                                     <img src="https://img.icons8.com/plasticine/30/000000/google-logo.png">
                                 </a>
-                                <a href="">
+                                <a href="redirect/facebook">
                                     <img src="https://img.icons8.com/office/25/000000/facebook-new.png">
                                 </a>
                             </div>

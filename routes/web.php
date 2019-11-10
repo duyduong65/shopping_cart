@@ -42,6 +42,9 @@ Route::middleware('locale')->group(function () {
         Route::get('{id}/plus', 'CartController@plus')->name('cart.plus');
         Route::get('{id}/subtraction', 'CartController@subtraction')->name('cart.subtraction');
     });
+
+    Route::get('/redirect/{social}', 'SocialAuthController@redirect');
+    Route::get('/callback/{social}', 'SocialAuthController@callback');
 });
 Auth::routes();
 
