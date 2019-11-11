@@ -1,10 +1,11 @@
 <?php
 
 
-namespace App\Http\Services;
+namespace App\Http\Services\implement;
 
-use Laravel\Socialite\Contracts\User as ProviderUser;
 use App\SocialAccount;
+use Laravel\Socialite\Contracts\User as ProviderUser;
+
 use App\User;
 
 
@@ -15,6 +16,8 @@ class SocialAccountService
         $account = SocialAccount::whereProvider($social)
             ->whereProviderUserId($providerUser->getId())
             ->first();
+
+        dd($account);
 
         if ($account) {
             return $account->user;

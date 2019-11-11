@@ -6,6 +6,7 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Http\Services\ProductServicesInterface;
 use App\Product;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -75,6 +76,5 @@ class productController extends Controller
         }
         abort('403', "Bạn không có quyền");
     }
-
 
 }

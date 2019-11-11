@@ -14,7 +14,8 @@ class AddColumnUserIdToSocialAccountsTable extends Migration
     public function up()
     {
         Schema::table('social_accounts', function (Blueprint $table) {
-            //
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
