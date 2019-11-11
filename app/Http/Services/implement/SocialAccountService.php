@@ -10,7 +10,7 @@ use App\User;
 
 class SocialAccountService
 {
-    public static function createOrGetUser(ProviderUser $providerUser, $social)
+    public  function createOrGetUser(ProviderUser $providerUser, $social)
     {
         $account = SocialAccount::whereProvider($social)
             ->whereProviderUserId($providerUser->getId())
